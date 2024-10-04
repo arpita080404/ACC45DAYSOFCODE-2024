@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+int T;
+cin>>T;
+if(T>=1&&T<=100){
+    for(int i=0;i<T;i++){
+        int N,X;
+        cin>>N>>X;
+        int A[N];
+        for(int i=0;i<N;i++){
+            cin>>A[i];
+        }
+        int max=X;
+        int sum=X;
+        for(int i=0;i<N;i++){
+            sum+=A[i];
+            
+            if(max<sum)
+            max=sum;
+        
+        }
+        cout<<max<<endl;
+    }
+return 0;
+}
+   
