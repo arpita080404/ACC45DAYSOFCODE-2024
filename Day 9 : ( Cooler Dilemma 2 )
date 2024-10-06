@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    for (int i = 0; i < T; i++) {
+        int X, Y;
+        cin >> X >> Y;
+
+        int m = X;
+        if (X == Y || X > Y)
+            cout << "0" << endl;
+        else {
+            m = Y / X;
+            if (Y % X == 0)
+                m--;
+            cout << m << endl;
+        }
+    }
+}
