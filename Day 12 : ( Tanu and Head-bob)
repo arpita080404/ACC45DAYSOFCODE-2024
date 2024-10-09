@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin>>T;
+    for (int i =0;i<T;i++){
+        int N;
+        cin>>N;
+        string s;
+        cin>>s;
+        int c_y=0;
+        int c_i=0;
+        int c_n=0;
+        for(int i=0;i<N;i++){
+            if(s[i]=='I')
+            c_i++;
+            else {
+                if(s[i]=='Y')
+                c_y++;
+            }
+        }
+        if(c_i>0)
+        cout<<"INDIAN"<<endl;
+        else{
+            if(c_y>0)
+            cout<<"NOT INDIAN"<<endl;
+            else
+            cout<<"NOT SURE"<<endl;
+        }
+    }
+
+}
