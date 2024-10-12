@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+    int T;
+    cin>>T;
+    while (T--){
+        int N, K, M;
+        cin>>N>>K>>M;
+        int b=K*M;
+        for (int i=1;i<=N;i++){
+            if(i*b>=N){
+            cout<<i<<endl;
+            break;
+            }
+        }
+    }
+}
