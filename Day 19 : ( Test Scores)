@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+     int T;
+     cin>>T;
+     while (T--){
+         int N,X,Y;
+         cin>>N>>X>>Y;
+         int s=0;
+         int m=0;
+         
+         for (int i=1;i<=N;i++){
+             
+             if(Y==0){
+               m=Y;
+               break;
+             }
+             s=X*i;
+             
+             if(s>Y)
+             break;
+             
+             m=s;
+         }
+         if(m==Y)
+         cout<<"YES"<<endl;
+         else
+         cout<<"NO"<<endl;
+     }
+     
+
+}
