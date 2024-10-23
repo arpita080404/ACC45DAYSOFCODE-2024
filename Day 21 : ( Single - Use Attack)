@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int T;
+	cin>>T;
+	while(T--){
+	    int H,X,Y;
+	    cin>>H>>X>>Y;
+	   int s=H-Y;
+	   int i=0;
+	   if(s){
+	   for(int I=1;I<=H;I++){
+	       s-=X;
+	       i=I;
+	       if(s<=0)
+	       break;
+	   }
+	   }
+	   cout<<(i+1)<<endl;
+	}
+
+}
