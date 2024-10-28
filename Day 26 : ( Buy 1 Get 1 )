@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        string S;
+        cin >> S;
+        
+        // Frequency array for each jewel type (case-sensitive)
+        unordered_map<char, int> frequency;
+
+        // Count the frequency of each jewel type
+        for (char jewel : S) {
+            frequency[jewel]++;
+        }
+
+        // Calculate the minimum cost using Buy1-Get1
+        int minimumCost = 0;
+        for (auto it : frequency) {
+            minimumCost += (it.second + 1) / 2; // ceil(it.second / 2)
+        }
+
+        // Output the minimum cost
+        cout << minimumCost << endl;
+    }
+
+    return 0;
+}
