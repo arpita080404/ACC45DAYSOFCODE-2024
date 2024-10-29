@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+      int T;
+      cin>>T;
+      while (T--){
+          int N;
+          cin>>N;
+          int c=0;
+          if(N==1)
+          c=1;
+          else{
+             for(int i=2;i<N;i++){
+                 if(i!=N){
+                     if(N%i==0){
+                         c=1;
+                         break;
+                     }
+                 }
+             }
+          }
+          if(c==0)
+          cout<<"yes"<<endl;
+          else
+          cout<<"no"<<endl;
+      }
+
+}
