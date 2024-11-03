@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+    int S[N];
+    int T[N];
+    for(int i = 0; i < N; i++) {
+        cin >> S[i] >> T[i];
+    }
+    int W = 0; // Winner
+    int L = 0; // Maximum lead
+    int d = 0; // Current lead
+    int a = 0; // Cumulative score of Player 1
+    int b = 0; // Cumulative score of Player 2
+
+    for(int i = 0; i < N; i++) {
+        a += S[i];
+        b += T[i];
+        
+        // Calculate current lead
+        if(a > b) {
+            d = a - b;
+            if(d > L) {
+                L = d;
+                W = 1;
+            }
+        } else {
+            d = b - a;
+            if(d > L) {
+                L = d;
+                W = 2;
+            }
+        }
+    }
+    
+    // Output the winner and maximum lead
+    cout << W << " " << L << endl;
+
+    return 0;
+}
