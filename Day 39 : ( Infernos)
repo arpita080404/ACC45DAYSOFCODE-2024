@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        int N, X;
+        cin >> N >> X;
+        int H[N];
+        for (int i = 0; i < N; i++)
+            cin >> H[i];
+        
+        int m = *max_element(H, H + N);
+        int single_target_time = 0;
+        for (int i = 0; i < N; i++) {
+            single_target_time += (H[i] + X - 1) / X; // Calculate the total time for single-target mode
+        }
+        
+        cout << min(single_target_time, m) << endl; // Output the minimum time
+    }
+    return 0;
+}
