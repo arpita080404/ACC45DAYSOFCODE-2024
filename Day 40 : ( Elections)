@@ -1,0 +1,67 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+void solve() {
+    int T;
+    cin >> T;  // Number of test cases
+
+    while (T--) {
+        int N, X;
+        cin >> N >> X;  // Number of states and Chef's votes
+        
+        vector<int> A(N), B(N);
+        for (int i = 0; i < N; i++) {
+            cin >> A[i];  // Votes for A in the i-th state
+        }
+        for (int i = 0; i < N; i++) {
+            cin >> B[i];  // Votes for B in the i-th state
+        }
+
+        int initial_wins = 0;
+        vector<int> needed_votes;  // Vector to store votes Chef needs to flip states
+
+        // Count initial wins and calculate votes needed to flip states
+        for (int i = 0; i < N; i++) {
+            if (A[i] > B[i]) {
+                initial_wins++;  // A already wins this state
+            } else if (A[i] < B[i]) {
+                // A is losing, calculate how many votes are needed to flip this state
+                needed_votes.push_back(B[i] - A[i] + 1);
+            } else {
+                // A[i] == B[i], one vote is needed to flip this state
+                needed_votes.push_back(1);
+            }
+        }
+
+        // We need more than half of N states to win
+        int required_wins = (N / 2) + 1;
+        int current_wins = initial_wins;
+
+        // Sort the needed votes in ascending order
+        sort(needed_votes.begin(), needed_votes.end());
+
+        // Try to flip the states that require the fewest votes first
+        for (int votes_needed : needed_votes) {
+            if (X >= votes_needed) {
+                X -= votes_needed;  // Deduct votes used to flip the state
+                current_wins++;  // A wins this state
+            } else {
+                break;  // If we don't have enough votes to flip more states, stop
+            }
+        }
+
+        // If A wins more than half the states, it's a "YES", otherwise "NO"
+        if (current_wins >= required_wins) {
+            cout << "YES\n";
+        } else {
+            cout << "NO\n";
+        }
+    }
+}
+
+int main() {
+    solve();
+    return 0;
+}
