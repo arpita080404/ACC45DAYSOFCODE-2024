@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int T;
+    cin >> T;
+    while (T--) {
+        long long N, X, Y;
+        cin >> N >> X >> Y;
+
+        // Calculate the number of cells attacked horizontally and vertically
+        long long horizontal_vertical = 2 * (N - 1); // N-1 in row + N-1 in column
+
+        // Calculate the number of cells attacked diagonally
+        long long diagonal1 = min(N - X, Y - 1) + min(X - 1, N - Y);
+        long long diagonal2 = min(N - X, N - Y) + min(X - 1, Y - 1);
+
+        long long total_attacked = horizontal_vertical + diagonal1 + diagonal2;
+
+        cout << total_attacked << "\n";
+    }
+    
+    return 0;
+}
