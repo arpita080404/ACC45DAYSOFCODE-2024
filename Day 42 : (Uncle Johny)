@@ -1,0 +1,11 @@
+T=int(input ()) 
+for i in range(T) :
+    N=int(input ())
+    A=input ()
+    a=[int(x) for x in A.split()]
+    k=int(input ())
+    I=a[k-1]
+    a. sort()
+    f=a. index(I)
+    print (f+1)
+    
