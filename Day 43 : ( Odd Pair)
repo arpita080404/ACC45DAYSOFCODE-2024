@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+     int T;
+     cin>>T;
+     while (T--){
+         long long N;
+         cin>>N;
+         if(N>1){
+             long long e=0;
+             long long o=0;
+             if(N%2!=0){
+                 o=((N+1)/2);
+                 e=N/2;
+                 cout<<(2*e*o)<<endl;
+             }
+             else{
+                 o=N/2;
+                 e=N/2;
+                 cout<<(2*e*o)<<endl;
+             }
+         }
+         else
+         cout<<0<<endl;
+     }
+
+}
