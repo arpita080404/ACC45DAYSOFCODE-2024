@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        long long N;
+        cin >> N;
+        int A, B;
+        cin >> A >> B;
+        long long e = 0;
+        long long o = 0;
+        if (N%2!= 0) {
+            o = ((N+1)/2);
+            e = N/2;
+        }
+        else {
+            o = N / 2;
+            e = N / 2;
+        }
+        cout <<(o*B+e*A)<< endl;
+    }
+}
